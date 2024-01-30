@@ -1,0 +1,13 @@
+{
+  "name": "json-server-api",
+  "version": "1.0.0",
+  "description": "API by json-server",
+  "main": "api/server.js",
+  "scripts": {
+    "start": "node api/server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "json-server": "^0.17.4"
+  }
+}

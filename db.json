@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "name": "John Doe",
+      "description": "zc ass sfs sfdsd",
+      "price": 45632,
+      "image": "rice-field.jpg",
+      "id": "1"
+    },
+    {
+      "name": "Mary Johnson",
+      "description": "808937482734",
+      "price": 135791.75,
+      "image": "IMG_5689.jpg",
+      "id": "2"
+    },
+    {
+      "id": "33e8",
+      "name": "Fuji",
+      "description": "0989552690",
+      "price": 67001,
+      "image": "mutu.jpg"
+    },
+    {
+      "id": "fa86",
+      "name": "test",
+      "description": "desc",
+      "price": 98765,
+      "image": "grilled-sweet-potatoes.jpg"
+    },
+    {
+      "id": "7a3d",
+      "name": "asdsd",
+      "description": "asdas",
+      "price": 4500,
+      "image": "klf-cover.png"
+    },
+    {
+      "id": "b14a",
+      "name": "sdfsf",
+      "description": "sdfsfs3333",
+      "price": 60000,
+      "image": "xChcYfb.jpg"
+    },
+    {
+      "id": "b7fb",
+      "name": "Logo",
+      "description": "sdfsd",
+      "price": 4546,
+      "image": "klf.png"
+    }
+  ]
+}
