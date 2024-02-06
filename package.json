@@ -1,5 +1,5 @@
 {
-  "name": "json-server-api",
+  "name": "json-server",
   "version": "1.0.0",
   "description": "API by json-server",
   "main": "api/server.js",
