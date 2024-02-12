@@ -8,7 +8,7 @@
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "tmp/db.json"
+            "destination": "api/server.js"
         }
     ]
 }
