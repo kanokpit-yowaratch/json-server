@@ -1,0 +1,111 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+	--font-sans: 'Inter', 'Sarabun', ui-sans-serif, system-ui, sans-serif;
+	--font-serif: 'Lora', 'Sarabun', ui-serif, Georgia, serif;
+	--font-mono: 'JetBrains Mono', 'Sarabun', ui-monospace, monospace;
+}
+
+html {
+	transition: background-color 0.2s ease;
+}
+
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 640px) {
+	html {
+		font-size: 15px;
+	}
+	body {
+		padding-bottom: env(safe-area-inset-bottom, 0px);
+	}
+}
+
+@media (hover: none) and (pointer: coarse) {
+	input,
+	select,
+	textarea,
+	button {
+		font-size: 16px;
+	}
+}
+
+input,
+select,
+textarea {
+	font-size: 16px;
+}
+
+@media (min-width: 640px) {
+	input,
+	select,
+	textarea {
+		font-size: revert;
+	}
+}
+
+.scrollbar-thin {
+	scrollbar-width: thin;
+	scrollbar-color: transparent transparent;
+}
+
+.scrollbar-thin:hover {
+	scrollbar-color: #cbd5e1 transparent;
+}
+
+.dark .scrollbar-thin:hover {
+	scrollbar-color: #475569 transparent;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fadeIn {
+	animation: fadeIn 0.2s ease-out;
+}
+
+@media (max-width: 768px) {
+	.resume-preview-wrapper {
+		transform-origin: top center;
+	}
+}
+
+@media print {
+	.no-print {
+		display: none !important;
+	}
+	main {
+		display: block !important;
+		overflow: visible !important;
+		height: auto !important;
+	}
+	main > div {
+		display: block !important;
+		width: 100% !important;
+		height: auto !important;
+		overflow: visible !important;
+	}
+	#resume-print-area {
+		transform: none !important;
+		scale: none !important;
+		box-shadow: none !important;
+		border: none !important;
+		margin: 0 auto !important;
+		width: 100% !important;
+	}
+	@page {
+		margin: 1.6cm;
+	}
+}

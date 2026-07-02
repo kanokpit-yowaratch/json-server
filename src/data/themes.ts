@@ -1,0 +1,58 @@
+import { ColorTheme } from '../types';
+
+export const COLOR_THEMES: ColorTheme[] = [
+	{
+		id: 'obsidian',
+		name: 'Classic Obsidian (Slate)',
+		primary: '#1e293b',
+		secondary: '#475569',
+		accent: '#4f46e5',
+		textDark: '#0f172a',
+		bgLight: '#f8fafc',
+	},
+	{
+		id: 'emerald',
+		name: 'Emerald Garden (Teal)',
+		primary: '#064e3b',
+		secondary: '#0f766e',
+		accent: '#0d9488',
+		textDark: '#111827',
+		bgLight: '#f0fdf4',
+	},
+	{
+		id: 'sapphire',
+		name: 'Royal Sapphire (Navy)',
+		primary: '#1e3a8a',
+		secondary: '#1d4ed8',
+		accent: '#2563eb',
+		textDark: '#0f172a',
+		bgLight: '#eff6ff',
+	},
+	{
+		id: 'amber',
+		name: 'Charcoal & Amber',
+		primary: '#171717',
+		secondary: '#525252',
+		accent: '#d97706',
+		textDark: '#171717',
+		bgLight: '#fafafa',
+	},
+	{
+		id: 'burgundy',
+		name: 'Burgundy Grace',
+		primary: '#4c0519',
+		secondary: '#881337',
+		accent: '#be123c',
+		textDark: '#1c1917',
+		bgLight: '#fff1f2',
+	},
+	{
+		id: 'nordic',
+		name: 'Nordic Slate & Sky',
+		primary: '#0f172a',
+		secondary: '#334155',
+		accent: '#0ea5e9',
+		textDark: '#0f172a',
+		bgLight: '#f8fafc',
+	},
+];

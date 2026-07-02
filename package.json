@@ -1,14 +1,31 @@
 {
-  "name": "json-server",
-  "version": "1.0.0",
-  "description": "API by json-server",
-  "main": "api/server.js",
-  "scripts": {
-    "start": "node api/server.js"
-  },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.4.7",
-    "json-server": "^0.17.4"
-  }
+	"name": "resume-builder",
+	"version": "0.1.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"format": "npx prettier . --write"
+	},
+	"dependencies": {
+		"html2canvas": "^1.4.1",
+		"jspdf": "^4.2.1",
+		"lucide-react": "^0.546.0",
+		"mongodb": "^7.4.0",
+		"next": "^16.2.10",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"tailwindcss": "^4.1.14"
+	},
+	"devDependencies": {
+		"@tailwindcss/postcss": "^4.1.14",
+		"@types/node": "^22.14.0",
+		"@types/react": "^19.1.2",
+		"@types/react-dom": "^19.1.2",
+		"prettier": "3.9.4",
+		"typescript": "~5.8.2"
+	}
 }
