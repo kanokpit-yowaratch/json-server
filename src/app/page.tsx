@@ -344,7 +344,7 @@ export default function Home() {
 						className="flex-1 p-2 sm:p-4 md:p-6 lg:p-8 overflow-x-hidden overflow-y-auto flex justify-center items-start bg-slate-50 dark:bg-slate-900">
 						<div
 							id="resume-print-area"
-							className="bg-white overflow-hidden origin-top max-w-0 shrink-0 shadow-sm"
+							className="bg-white overflow-hidden origin-top shrink-0 shadow-sm"
 							style={{
 								width: '794px',
 								minHeight: '1123px',
