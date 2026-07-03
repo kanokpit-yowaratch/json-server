@@ -1,7 +1,7 @@
 {
 	"th": {
 		"personalInfo": {
-			"name": "กนกพิชญ์ ยิ่งคุณากร",
+			"name": "สมหญิง ใจดี",
 			"title": "เจ้าหน้าที่สนับสนุนฝ่ายขายอาวุโส (Senior Sales Support Specialist)",
 			"email": "sujitra.k@gmail.com",
 			"phone": "081-234-5678",
@@ -108,9 +108,9 @@
 	},
 	"en": {
 		"personalInfo": {
-			"name": "Sujitra Kan-intr",
+			"name": "Somying Jaidee",
 			"title": "Senior Sales Support Specialist",
-			"email": "sujitra.k@gmail.com",
+			"email": "somying.j@example.com",
 			"phone": "+66 81 234 5678",
 			"location": "Bangkok, Thailand",
 			"linkedin": "linkedin.com/in/sujitra-kan-intr",

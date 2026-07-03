@@ -9,6 +9,11 @@ const nextConfig: NextConfig = {
 			},
 		],
 	},
+	experimental: {
+		outputFileTracingIncludes: {
+			'*': ['node_modules/@sparticuz/chromium/**'],
+		},
+	} as any,
 };
 
 export default nextConfig;

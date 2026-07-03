@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { ResumeData, DesignConfig, ColorTheme, FontPairing } from '../types';
 import { COLOR_THEMES } from '../data/themes';
@@ -31,9 +29,9 @@ export default function ResumePreview({ data, config }: ResumePreviewProps) {
 	}[config.fontPairing];
 
 	const spacingClass = {
-		compact: 'space-y-3 py-4 px-6 text-sm',
-		comfortable: 'space-y-5 py-6 px-8 text-base',
-		loose: 'space-y-7 py-8 px-10 text-lg',
+		compact: 'space-y-3 text-sm',
+		comfortable: 'space-y-5 text-base',
+		loose: 'space-y-7 text-lg',
 	}[config.spacing];
 
 	const itemSpacing = {
@@ -381,7 +379,7 @@ export default function ResumePreview({ data, config }: ResumePreviewProps) {
 	const renderMinimalLayout = () => {
 		return (
 			<div
-				className={`${fontClass} ${spacingClass} bg-white text-gray-800 h-full w-full max-w-[800px] mx-auto`}
+				className={`${fontClass} ${spacingClass} bg-white text-gray-800 h-full w-full max-w-[600px] mx-auto`}
 				id="resume-container">
 				<div className="text-center space-y-2.5 pb-4 border-b border-gray-100">
 					<div className="flex justify-center mb-1">{renderAvatar('h-20 w-20')}</div>
@@ -419,7 +417,7 @@ export default function ResumePreview({ data, config }: ResumePreviewProps) {
 	const renderProfessionalLayout = () => {
 		return (
 			<div
-				className={`${fontClass} ${spacingClass} bg-white text-gray-800 h-full w-full max-w-[800px] mx-auto space-y-0`}
+				className={`${fontClass} ${spacingClass} bg-white text-gray-800 h-full w-full max-w-[600px] mx-auto space-y-0`}
 				id="resume-container">
 				<div
 					className="p-6 rounded-lg mb-6 flex flex-col md:flex-row md:justify-between md:items-center gap-4 border-l-4"
@@ -465,7 +463,7 @@ export default function ResumePreview({ data, config }: ResumePreviewProps) {
 	const renderSidebarLayout = (isLeft: boolean) => {
 		return (
 			<div
-				className={`${fontClass} h-full w-full max-w-[800px] mx-auto grid grid-cols-12 space-y-0 bg-white overflow-hidden`}
+				className={`${fontClass} h-full w-full max-w-[600px] mx-auto grid grid-cols-12 space-y-0 bg-white overflow-hidden`}
 				id="resume-container">
 				<div
 					className={`col-span-4 p-5 flex flex-col gap-5 ${isLeft ? 'order-1 border-r' : 'order-2 border-l'} border-gray-100`}
@@ -516,7 +514,7 @@ export default function ResumePreview({ data, config }: ResumePreviewProps) {
 	const renderElegantSerifLayout = () => {
 		return (
 			<div
-				className={`${fontClass} ${spacingClass} bg-white text-gray-800 h-full w-full max-w-[800px] mx-auto`}
+				className={`${fontClass} ${spacingClass} bg-white text-gray-800 h-full w-full max-w-[600px] mx-auto`}
 				id="resume-container">
 				<div className="text-center space-y-3 pb-5">
 					<div className="flex justify-center mb-1">{renderAvatar('h-20 w-20')}</div>

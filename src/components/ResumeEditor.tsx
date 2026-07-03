@@ -408,7 +408,7 @@ export default function ResumeEditor({
 									type="text"
 									value={data.personalInfo.name}
 									onChange={(e) => updatePersonalInfo('name', e.target.value)}
-									placeholder="e.g. กนกพิชญ์ ยิ่งคุณากร"
+									placeholder="e.g. สมหญิง ใจดี"
 									className="w-full text-xs px-3 py-2 border border-slate-200 dark:border-slate-600 rounded-lg focus:outline-none focus:ring-1 focus:ring-slate-900 dark:focus:ring-slate-400 focus:border-slate-900 bg-white dark:bg-slate-900"
 								/>
 							</div>

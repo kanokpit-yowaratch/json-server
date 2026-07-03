@@ -7,13 +7,26 @@ import ResumeEditor from './ResumeEditor';
 import DesignConfigurator from './DesignConfigurator';
 import GuidePanel from './GuidePanel';
 import ResumePreview from './ResumePreview';
-import { exportToPdf } from '../utils/pdfExport';
-import { FileText, Download, Printer, Settings, HelpCircle, Eye, Sun, Moon, Save, Check } from 'lucide-react';
+import { downloadResumePDF } from '../utils/client/downloadResumePDF';
+import { FileText, Download, Settings, HelpCircle, Eye, Sun, Moon, Save, Check } from 'lucide-react';
 
-export default function ResumeBuilder() {
+interface ResumeBuilderProps {
+	resumeId?: string;
+	initialData?: Record<string, unknown>;
+	title?: string;
+	onTitleChange?: (title: string) => void;
+}
+
+export default function ResumeBuilder({ resumeId, initialData, title, onTitleChange }: ResumeBuilderProps) {
+	const getInitial = <T,>(key: string, fallback: T): T => (initialData?.[key] as T) ?? fallback;
+
 	const [currentLanguage, setCurrentLanguage] = useState<'th' | 'en'>('th');
-	const [thaiResume, setThaiResume] = useState<ResumeData>(thaiDefault);
-	const [englishResume, setEnglishResume] = useState<ResumeData>(enDefault);
+	const [thaiResume, setThaiResume] = useState<ResumeData>(
+		getInitial<ResumeData | null>('thaiData', null) || thaiDefault,
+	);
+	const [englishResume, setEnglishResume] = useState<ResumeData>(
+		getInitial<ResumeData | null>('englishData', null) || enDefault,
+	);
 
 	const resumeData = currentLanguage === 'th' ? thaiResume : englishResume;
 
@@ -33,14 +46,16 @@ export default function ResumeBuilder() {
 		}
 	};
 
-	const [designConfig, setDesignConfig] = useState<DesignConfig>({
-		template: 'minimal',
-		themeId: 'obsidian',
-		fontPairing: 'sans',
-		spacing: 'comfortable',
-		showSectionHeaders: true,
-		showAvatar: true,
-	});
+	const [designConfig, setDesignConfig] = useState<DesignConfig>(
+		getInitial<DesignConfig | null>('designConfig', null) || {
+			template: 'minimal',
+			themeId: 'obsidian',
+			fontPairing: 'sans',
+			spacing: 'comfortable',
+			showSectionHeaders: true,
+			showAvatar: true,
+		},
+	);
 
 	const [isDarkMode, setIsDarkMode] = useState(false);
 	const [mounted, setMounted] = useState(false);
@@ -54,28 +69,6 @@ export default function ResumeBuilder() {
 		if (!mounted) return;
 		document.documentElement.classList.toggle('dark', isDarkMode);
 	}, [isDarkMode, mounted]);
-
-	const [isLoadedFromServer, setIsLoadedFromServer] = useState(false);
-
-	useEffect(() => {
-		async function loadFromApi() {
-			try {
-				const response = await fetch('/api/resume');
-				const result = await response.json();
-				if (result.success && result.data) {
-					if (result.data.th) setThaiResume(result.data.th);
-					if (result.data.en) setEnglishResume(result.data.en);
-					if (result.data.designConfig) setDesignConfig(result.data.designConfig);
-				}
-			} catch (error) {
-				console.info('Using default mock data (API unavailable)');
-			} finally {
-				setIsLoadedFromServer(true);
-			}
-		}
-
-		loadFromApi();
-	}, []);
 
 	const [activeSidebarTab, setActiveSidebarTab] = useState<'content' | 'design' | 'guide'>('content');
 	const [isExporting, setIsExporting] = useState(false);
@@ -108,8 +101,12 @@ export default function ResumeBuilder() {
 	const handleExportPdf = async () => {
 		setIsExporting(true);
 		try {
-			const safeName = resumeData.personalInfo.name.replace(/\s+/g, '_') || 'Resume';
-			await exportToPdf('resume-print-area', `Resume_${safeName}.pdf`);
+			await downloadResumePDF({
+				thaiData: thaiResume,
+				englishData: englishResume,
+				designConfig,
+				currentLanguage,
+			});
 		} catch (err) {
 			alert('เกิดข้อผิดพลาดในการดาวน์โหลด PDF กรุณาลองใหม่อีกครั้ง');
 			console.error(err);
@@ -118,23 +115,33 @@ export default function ResumeBuilder() {
 		}
 	};
 
-	const handleBrowserPrint = () => {
-		window.print();
-	};
-
 	const handleSave = async () => {
 		setSaveStatus('saving');
-		const payload = {
-			th: thaiResume,
-			en: englishResume,
-			designConfig: designConfig,
+		const payload: Record<string, unknown> = {
+			title,
+			thaiData: thaiResume,
+			englishData: englishResume,
+			designConfig,
 		};
 		try {
-			await fetch('/api/resume', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(payload),
-			});
+			if (resumeId) {
+				await fetch(`/api/resumes/${resumeId}`, {
+					method: 'PUT',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(payload),
+				});
+			} else {
+				const res = await fetch('/api/resumes', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify(payload),
+				});
+				const json = await res.json();
+				if (json.success && json.data?._id) {
+					window.location.href = `/resumes/${json.data._id}`;
+					return;
+				}
+			}
 		} catch {
 			console.error('Failed to save data');
 		}
@@ -201,12 +208,12 @@ export default function ResumeBuilder() {
 						</button>
 
 						<button
-							onClick={handleBrowserPrint}
-							disabled={isSaving}
+							onClick={handleExportPdf}
+							disabled={isExporting || isSaving}
 							className="flex items-center justify-center gap-1 sm:gap-2 px-2 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 hover:bg-slate-200 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-white transition-all cursor-pointer border border-slate-200 dark:border-slate-700 disabled:opacity-50 disabled:pointer-events-none"
-							title="Use browser print dialog">
-							<Printer className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-							<span className="hidden lg:inline">Print / พิมพ์</span>
+							title="Export as PDF">
+							<Download className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
+							<span className="hidden lg:inline">{isExporting ? 'Exporting...' : 'PDF / ดาวน์โหลด PDF'}</span>
 						</button>
 
 						<button

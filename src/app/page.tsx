@@ -1,5 +1,5 @@
-import ResumeBuilder from '../components/ResumeBuilder';
+import { redirect } from 'next/navigation';
 
-export default function Home() {
-	return <ResumeBuilder />;
+export default function RootPage() {
+	redirect('/resumes');
 }
