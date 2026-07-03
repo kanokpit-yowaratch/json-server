@@ -1,264 +1,264 @@
 {
-  "th": {
-    "personalInfo": {
-      "name": "สุจิตรา แคนอินทร์",
-      "title": "เจ้าหน้าที่สนับสนุนฝ่ายขายอาวุโส (Senior Sales Support Specialist)",
-      "email": "sujitra.k@gmail.com",
-      "phone": "081-234-5678",
-      "location": "กรุงเทพมหานคร, ประเทศไทย",
-      "linkedin": "linkedin.com/in/sujitra-k",
-      "website": "github.com/sujitra-k",
-      "avatar": ""
-    },
-    "summary": "เจ้าหน้าที่สนับสนุนฝ่ายขายที่มีประสบการณ์กว่า 4 ปี มุ่งมั่นและมีความเป็นมืออาชีพในการดูแลยอดขาย ประสานงานลูกค้า และบริหารจัดการกระบวนการขายเพื่อขับเคลื่อนการเติบโตขององค์กร มีความเชี่ยวชาญการใช้ระบบ CRM (Salesforce) และการวิเคราะห์รายงานข้อมูลยอดขาย มีผลงานที่โดดเด่นในการสนับสนุนทีมขายให้สามารถบรรลุเป้าหมายยอดขายประจำปีที่บริษัทกำหนดได้อย่างสม่ำเสมอ พร้อมพัฒนาความสัมพันธ์อันดีกับคู่ค้าและลูกค้าทุกระดับอย่างยั่งยืน",
-    "workExperiences": [
-      {
-        "id": "work-1",
-        "company": "บริษัท เอเพ็กซ์ โกลบอล โซลูชันส์ จำกัด",
-        "role": "เจ้าหน้าที่สนับสนุนการขายอาวุโส (Senior Sales Support Specialist)",
-        "location": "กรุงเทพฯ",
-        "startDate": "2565 (2022)",
-        "endDate": "ปัจจุบัน",
-        "current": true,
-        "description": [
-          "ดูแลและตรวจสอบยอดขายในระบบ พร้อมจัดทำรายงานยอดขายรายสัปดาห์และรายเดือนเสนอผู้บริหารเพื่อกำหนดทิศทางกลยุทธ์การขาย ช่วยให้ทีมขายสามารถบรรลุเป้าหมายประจำปีของบริษัท 120 ล้านบาท ได้อย่างราบรื่น",
-          "ประสานงานลูกค้ากลุ่ม B2B ในด้านการจัดซื้อ ใบเสนอราคา สัญญาซื้อขาย และการจัดส่งสินค้า ป้องกันและแก้ไขปัญหาในการส่งมอบอย่างรวดเร็ว ส่งผลให้ความพึงพอใจของลูกค้าเพิ่มขึ้นเป็น 96%",
-          "ประสานงานอย่างใกล้ชิดระหว่างทีมขาย ทีมบัญชี คลังสินค้า และทีมขนส่ง เพื่อดูแลกระบวนการทำงานตั้งแต่ต้นจนจบ (Order-to-Cash) และลดข้อผิดพลาดด้านการออกเอกสารได้ถึง 15%",
-          "วิเคราะห์ความเคลื่อนไหวและแนวโน้มยอดขายกลุ่มลูกค้าเดิม นำมาเสนอแนวทางกระตุ้นการขายและเพิ่มยอดสั่งซื้อซ้ำ (Re-order) ร่วมกับทีมขายสำเร็จ"
-        ]
-      },
-      {
-        "id": "work-2",
-        "company": "บริษัท อินโนเวท เทค คอร์ปอเรชัน (ประเทศไทย) จำกัด",
-        "role": "ผู้ประสานงานฝ่ายขาย (Sales Support Coordinator)",
-        "location": "กรุงเทพฯ",
-        "startDate": "2563 (2020)",
-        "endDate": "2565 (2022)",
-        "current": false,
-        "description": [
-          "รับผิดชอบการดูแลยอดขายของกลุ่มคู่ค้ารายย่อยมากกว่า 50 ราย ประสานงานการนำเสนอโปรโมชั่นและแคมเปญส่งเสริมการขาย ผลักดันให้คู่ค้าทำยอดขายทะลุเป้าหมายตามที่บริษัทกำหนดทุกไตรมาส",
-          "ทำหน้าที่เป็นจุดประสานงานหลัก (Single Point of Contact) ในการตอบคำถามลูกค้าเกี่ยวกับการใช้งานสินค้าเบื้องต้น ข้อเสนอราคา และการติดตามสถานะการเคลมสินค้า",
-          "บันทึกและจัดการข้อมูลในระบบ CRM ข้อมูลลูกค้า สัญญาซื้อขาย และประวัติการสั่งซื้ออย่างเป็นระบบ ทำให้สามารถเข้าถึงและนำข้อมูลไปต่อยอดขายได้เร็วขึ้น 30%"
-        ]
-      }
-    ],
-    "educations": [
-      {
-        "id": "edu-1",
-        "institution": "มหาวิทยาลัยธรรมศาสตร์",
-        "degree": "ปริญญาตรีบริหารธุรกิจบัณฑิต (บธ.บ.)",
-        "major": "สาขาวิชาการตลาด (Marketing)",
-        "location": "กรุงเทพฯ",
-        "startDate": "2559 (2016)",
-        "endDate": "2563 (2020)",
-        "current": false,
-        "gpa": "3.65 (เกียรตินิยมอันดับสอง)"
-      }
-    ],
-    "skills": [
-      {
-        "id": "skill-1",
-        "name": "การบริหารจัดการยอดขาย (Sales Pipeline Management)",
-        "category": "Core"
-      },
-      {
-        "id": "skill-2",
-        "name": "การประสานงานและดูแลลูกค้า (Customer Relations & Support)",
-        "category": "Core"
-      },
-      {
-        "id": "skill-3",
-        "name": "การจัดทำเอกสารธุรกิจ (ใบเสนอราคา สัญญาซื้อขาย ใบแจ้งหนี้)",
-        "category": "Core"
-      },
-      {
-        "id": "skill-4",
-        "name": "Salesforce CRM & Microsoft Excel (Advanced Formulas)",
-        "category": "Tools"
-      },
-      {
-        "id": "skill-5",
-        "name": "SAP ERP & Google Workspace",
-        "category": "Tools"
-      },
-      {
-        "id": "skill-6",
-        "name": "ทักษะการเจรจาต่อรอง (Negotiation Skills)",
-        "category": "Soft"
-      },
-      {
-        "id": "skill-7",
-        "name": "การทำงานร่วมกันเป็นทีม (Cross-Functional Team Collaboration)",
-        "category": "Soft"
-      },
-      {
-        "id": "skill-8",
-        "name": "การแก้ไขปัญหาเฉพาะหน้า (Active Problem Solving)",
-        "category": "Soft"
-      }
-    ],
-    "languages": [
-      {
-        "id": "lang-1",
-        "name": "ภาษาไทย (Thai)",
-        "proficiency": "เจ้าของภาษา (Native)"
-      },
-      {
-        "id": "lang-2",
-        "name": "ภาษาอังกฤษ (English)",
-        "proficiency": "สื่อสารได้ดีมาก (Business Level / TOEIC 810)"
-      }
-    ],
-    "projectsOrCerts": [
-      {
-        "id": "cert-1",
-        "title": "Salesforce Certified Administrator",
-        "issuerOrCompany": "Salesforce",
-        "date": "2566 (2023)",
-        "description": "ประกาศนียบัตรรับรองความเชี่ยวชาญการบริหารจัดการระบบฐานข้อมูลและการวิเคราะห์รายงานระบบ Salesforce"
-      },
-      {
-        "id": "cert-2",
-        "title": "Professional Sales Support & Negotiation Masterclass",
-        "issuerOrCompany": "Thailand Management Association (TMA)",
-        "date": "2565 (2022)",
-        "description": "หลักสูตรอบรมทักษะการเจรจาต่อรองและการประสานงานเพื่อส่งเสริมการขายและการดูแลลูกค้าอย่างมืออาชีพ"
-      }
-    ]
-  },
-  "en": {
-    "personalInfo": {
-      "name": "Sujitra Kan-intr",
-      "title": "Senior Sales Support Specialist",
-      "email": "sujitra.k@gmail.com",
-      "phone": "+66 81 234 5678",
-      "location": "Bangkok, Thailand",
-      "linkedin": "linkedin.com/in/sujitra-kan-intr",
-      "website": "github.com/sujitra-kan-intr",
-      "avatar": ""
-    },
-    "summary": "Dedicated and detail-oriented Sales Support Specialist with over 4 years of professional experience in managing sales pipelines, coordinating client relations, and optimizing administrative operations. Highly proficient in Salesforce CRM, data analytics, and reporting. Recognized for an outstanding track record of assisting sales teams in consistently surpassing company-defined sales targets while fostering lasting relationships with key clients and cross-functional departments.",
-    "workExperiences": [
-      {
-        "id": "work-1",
-        "company": "Apex Global Solutions Co., Ltd.",
-        "role": "Senior Sales Support Specialist",
-        "location": "Bangkok, TH",
-        "startDate": "2022",
-        "endDate": "Present",
-        "current": true,
-        "description": [
-          "Monitored sales pipelines and compiled detailed weekly/monthly performance reports for management review, ensuring the sales team hit its annual target of 120 million THB.",
-          "Coordinated B2B accounts regarding contracts, procurement documentation, and shipment logistics, resolving fulfillment issues to boost the client satisfaction rate to 96%.",
-          "Liaised intensively between Sales, Finance, Warehouse, and Logistics divisions to govern the end-to-end Order-to-Cash process, mitigating billing and ordering errors by 15%.",
-          "Analysed consumption patterns of active clients to assist the sales team in offering tailored upselling packages, driving repeated purchases."
-        ]
-      },
-      {
-        "id": "work-2",
-        "company": "Innovate Tech Corporation (Thailand) Ltd.",
-        "role": "Sales Support Coordinator",
-        "location": "Bangkok, TH",
-        "startDate": "2020",
-        "endDate": "2022",
-        "current": false,
-        "description": [
-          "Managed sales pipelines and promotions for 50+ retail distributors, assisting them in exceeding company-established sales quotas for 6 consecutive quarters.",
-          "Served as the primary Single Point of Contact for key clients regarding product offerings, quotes, and warranty claims, ensuring a 24-hour response rate.",
-          "Maintained customer databases in Salesforce CRM, updating contact sheets and transaction records to accelerate sales cycle velocity by 30%."
-        ]
-      }
-    ],
-    "educations": [
-      {
-        "id": "edu-1",
-        "institution": "Thammasat University",
-        "degree": "Bachelor of Business Administration (B.B.A.)",
-        "major": "Marketing Major",
-        "location": "Bangkok, TH",
-        "startDate": "2016",
-        "endDate": "2020",
-        "current": false,
-        "gpa": "3.65 (Second Class Honours)"
-      }
-    ],
-    "skills": [
-      {
-        "id": "skill-1",
-        "name": "Sales Pipeline Management",
-        "category": "Core"
-      },
-      {
-        "id": "skill-2",
-        "name": "Customer Relations & Client Coordination",
-        "category": "Core"
-      },
-      {
-        "id": "skill-3",
-        "name": "Order Processing & Contract Documentation",
-        "category": "Core"
-      },
-      {
-        "id": "skill-4",
-        "name": "Salesforce CRM & Microsoft Excel (Advanced Pivot Tables)",
-        "category": "Tools"
-      },
-      {
-        "id": "skill-5",
-        "name": "SAP ERP & Google Workspace Suite",
-        "category": "Tools"
-      },
-      {
-        "id": "skill-6",
-        "name": "Professional Business Negotiation",
-        "category": "Soft"
-      },
-      {
-        "id": "skill-7",
-        "name": "Cross-Functional Team Collaboration",
-        "category": "Soft"
-      },
-      {
-        "id": "skill-8",
-        "name": "Strategic Problem Solving",
-        "category": "Soft"
-      }
-    ],
-    "languages": [
-      {
-        "id": "lang-1",
-        "name": "Thai",
-        "proficiency": "Native Speaker"
-      },
-      {
-        "id": "lang-2",
-        "name": "English",
-        "proficiency": "Professional Working Proficiency (TOEIC 810)"
-      }
-    ],
-    "projectsOrCerts": [
-      {
-        "id": "cert-1",
-        "title": "Salesforce Certified Administrator",
-        "issuerOrCompany": "Salesforce",
-        "date": "2023",
-        "description": "Credentail proving mastery in Salesforce database administration, dashboard setups, and custom analytics reporting."
-      },
-      {
-        "id": "cert-2",
-        "title": "Professional Sales Support & Negotiation Masterclass",
-        "issuerOrCompany": "Thailand Management Association (TMA)",
-        "date": "2022",
-        "description": "Certified intensive training focusing on tactical client communication, sales pipeline enhancement, and conflict resolution."
-      }
-    ]
-  },
-  "designConfig": {
-    "template": "minimal",
-    "themeId": "obsidian",
-    "fontPairing": "sans",
-    "spacing": "comfortable",
-    "showSectionHeaders": true,
-    "showAvatar": true
-  }
+	"th": {
+		"personalInfo": {
+			"name": "สุจิตรา แคนอินทร์",
+			"title": "เจ้าหน้าที่สนับสนุนฝ่ายขายอาวุโส (Senior Sales Support Specialist)",
+			"email": "sujitra.k@gmail.com",
+			"phone": "081-234-5678",
+			"location": "กรุงเทพมหานคร, ประเทศไทย",
+			"linkedin": "linkedin.com/in/sujitra-k",
+			"website": "github.com/sujitra-k",
+			"avatar": ""
+		},
+		"summary": "เจ้าหน้าที่สนับสนุนฝ่ายขายที่มีประสบการณ์กว่า 4 ปี มุ่งมั่นและมีความเป็นมืออาชีพในการดูแลยอดขาย ประสานงานลูกค้า และบริหารจัดการกระบวนการขายเพื่อขับเคลื่อนการเติบโตขององค์กร มีความเชี่ยวชาญการใช้ระบบ CRM (Salesforce) และการวิเคราะห์รายงานข้อมูลยอดขาย มีผลงานที่โดดเด่นในการสนับสนุนทีมขายให้สามารถบรรลุเป้าหมายยอดขายประจำปีที่บริษัทกำหนดได้อย่างสม่ำเสมอ พร้อมพัฒนาความสัมพันธ์อันดีกับคู่ค้าและลูกค้าทุกระดับอย่างยั่งยืน",
+		"workExperiences": [
+			{
+				"id": "work-1",
+				"company": "บริษัท เอเพ็กซ์ โกลบอล โซลูชันส์ จำกัด",
+				"role": "เจ้าหน้าที่สนับสนุนการขายอาวุโส (Senior Sales Support Specialist)",
+				"location": "กรุงเทพฯ",
+				"startDate": "2565 (2022)",
+				"endDate": "ปัจจุบัน",
+				"current": true,
+				"description": [
+					"ดูแลและตรวจสอบยอดขายในระบบ พร้อมจัดทำรายงานยอดขายรายสัปดาห์และรายเดือนเสนอผู้บริหารเพื่อกำหนดทิศทางกลยุทธ์การขาย ช่วยให้ทีมขายสามารถบรรลุเป้าหมายประจำปีของบริษัท 120 ล้านบาท ได้อย่างราบรื่น",
+					"ประสานงานลูกค้ากลุ่ม B2B ในด้านการจัดซื้อ ใบเสนอราคา สัญญาซื้อขาย และการจัดส่งสินค้า ป้องกันและแก้ไขปัญหาในการส่งมอบอย่างรวดเร็ว ส่งผลให้ความพึงพอใจของลูกค้าเพิ่มขึ้นเป็น 96%",
+					"ประสานงานอย่างใกล้ชิดระหว่างทีมขาย ทีมบัญชี คลังสินค้า และทีมขนส่ง เพื่อดูแลกระบวนการทำงานตั้งแต่ต้นจนจบ (Order-to-Cash) และลดข้อผิดพลาดด้านการออกเอกสารได้ถึง 15%",
+					"วิเคราะห์ความเคลื่อนไหวและแนวโน้มยอดขายกลุ่มลูกค้าเดิม นำมาเสนอแนวทางกระตุ้นการขายและเพิ่มยอดสั่งซื้อซ้ำ (Re-order) ร่วมกับทีมขายสำเร็จ"
+				]
+			},
+			{
+				"id": "work-2",
+				"company": "บริษัท อินโนเวท เทค คอร์ปอเรชัน (ประเทศไทย) จำกัด",
+				"role": "ผู้ประสานงานฝ่ายขาย (Sales Support Coordinator)",
+				"location": "กรุงเทพฯ",
+				"startDate": "2563 (2020)",
+				"endDate": "2565 (2022)",
+				"current": false,
+				"description": [
+					"รับผิดชอบการดูแลยอดขายของกลุ่มคู่ค้ารายย่อยมากกว่า 50 ราย ประสานงานการนำเสนอโปรโมชั่นและแคมเปญส่งเสริมการขาย ผลักดันให้คู่ค้าทำยอดขายทะลุเป้าหมายตามที่บริษัทกำหนดทุกไตรมาส",
+					"ทำหน้าที่เป็นจุดประสานงานหลัก (Single Point of Contact) ในการตอบคำถามลูกค้าเกี่ยวกับการใช้งานสินค้าเบื้องต้น ข้อเสนอราคา และการติดตามสถานะการเคลมสินค้า",
+					"บันทึกและจัดการข้อมูลในระบบ CRM ข้อมูลลูกค้า สัญญาซื้อขาย และประวัติการสั่งซื้ออย่างเป็นระบบ ทำให้สามารถเข้าถึงและนำข้อมูลไปต่อยอดขายได้เร็วขึ้น 30%"
+				]
+			}
+		],
+		"educations": [
+			{
+				"id": "edu-1",
+				"institution": "มหาวิทยาลัยธรรมศาสตร์",
+				"degree": "ปริญญาตรีบริหารธุรกิจบัณฑิต (บธ.บ.)",
+				"major": "สาขาวิชาการตลาด (Marketing)",
+				"location": "กรุงเทพฯ",
+				"startDate": "2559 (2016)",
+				"endDate": "2563 (2020)",
+				"current": false,
+				"gpa": "3.65 (เกียรตินิยมอันดับสอง)"
+			}
+		],
+		"skills": [
+			{
+				"id": "skill-1",
+				"name": "การบริหารจัดการยอดขาย (Sales Pipeline Management)",
+				"category": "Core"
+			},
+			{
+				"id": "skill-2",
+				"name": "การประสานงานและดูแลลูกค้า (Customer Relations & Support)",
+				"category": "Core"
+			},
+			{
+				"id": "skill-3",
+				"name": "การจัดทำเอกสารธุรกิจ (ใบเสนอราคา สัญญาซื้อขาย ใบแจ้งหนี้)",
+				"category": "Core"
+			},
+			{
+				"id": "skill-4",
+				"name": "Salesforce CRM & Microsoft Excel (Advanced Formulas)",
+				"category": "Tools"
+			},
+			{
+				"id": "skill-5",
+				"name": "SAP ERP & Google Workspace",
+				"category": "Tools"
+			},
+			{
+				"id": "skill-6",
+				"name": "ทักษะการเจรจาต่อรอง (Negotiation Skills)",
+				"category": "Soft"
+			},
+			{
+				"id": "skill-7",
+				"name": "การทำงานร่วมกันเป็นทีม (Cross-Functional Team Collaboration)",
+				"category": "Soft"
+			},
+			{
+				"id": "skill-8",
+				"name": "การแก้ไขปัญหาเฉพาะหน้า (Active Problem Solving)",
+				"category": "Soft"
+			}
+		],
+		"languages": [
+			{
+				"id": "lang-1",
+				"name": "ภาษาไทย (Thai)",
+				"proficiency": "เจ้าของภาษา (Native)"
+			},
+			{
+				"id": "lang-2",
+				"name": "ภาษาอังกฤษ (English)",
+				"proficiency": "สื่อสารได้ดีมาก (Business Level / TOEIC 810)"
+			}
+		],
+		"projectsOrCerts": [
+			{
+				"id": "cert-1",
+				"title": "Salesforce Certified Administrator",
+				"issuerOrCompany": "Salesforce",
+				"date": "2566 (2023)",
+				"description": "ประกาศนียบัตรรับรองความเชี่ยวชาญการบริหารจัดการระบบฐานข้อมูลและการวิเคราะห์รายงานระบบ Salesforce"
+			},
+			{
+				"id": "cert-2",
+				"title": "Professional Sales Support & Negotiation Masterclass",
+				"issuerOrCompany": "Thailand Management Association (TMA)",
+				"date": "2565 (2022)",
+				"description": "หลักสูตรอบรมทักษะการเจรจาต่อรองและการประสานงานเพื่อส่งเสริมการขายและการดูแลลูกค้าอย่างมืออาชีพ"
+			}
+		]
+	},
+	"en": {
+		"personalInfo": {
+			"name": "Sujitra Kan-intr",
+			"title": "Senior Sales Support Specialist",
+			"email": "sujitra.k@gmail.com",
+			"phone": "+66 81 234 5678",
+			"location": "Bangkok, Thailand",
+			"linkedin": "linkedin.com/in/sujitra-kan-intr",
+			"website": "github.com/sujitra-kan-intr",
+			"avatar": ""
+		},
+		"summary": "Dedicated and detail-oriented Sales Support Specialist with over 4 years of professional experience in managing sales pipelines, coordinating client relations, and optimizing administrative operations. Highly proficient in Salesforce CRM, data analytics, and reporting. Recognized for an outstanding track record of assisting sales teams in consistently surpassing company-defined sales targets while fostering lasting relationships with key clients and cross-functional departments.",
+		"workExperiences": [
+			{
+				"id": "work-1",
+				"company": "Apex Global Solutions Co., Ltd.",
+				"role": "Senior Sales Support Specialist",
+				"location": "Bangkok, TH",
+				"startDate": "2022",
+				"endDate": "Present",
+				"current": true,
+				"description": [
+					"Monitored sales pipelines and compiled detailed weekly/monthly performance reports for management review, ensuring the sales team hit its annual target of 120 million THB.",
+					"Coordinated B2B accounts regarding contracts, procurement documentation, and shipment logistics, resolving fulfillment issues to boost the client satisfaction rate to 96%.",
+					"Liaised intensively between Sales, Finance, Warehouse, and Logistics divisions to govern the end-to-end Order-to-Cash process, mitigating billing and ordering errors by 15%.",
+					"Analysed consumption patterns of active clients to assist the sales team in offering tailored upselling packages, driving repeated purchases."
+				]
+			},
+			{
+				"id": "work-2",
+				"company": "Innovate Tech Corporation (Thailand) Ltd.",
+				"role": "Sales Support Coordinator",
+				"location": "Bangkok, TH",
+				"startDate": "2020",
+				"endDate": "2022",
+				"current": false,
+				"description": [
+					"Managed sales pipelines and promotions for 50+ retail distributors, assisting them in exceeding company-established sales quotas for 6 consecutive quarters.",
+					"Served as the primary Single Point of Contact for key clients regarding product offerings, quotes, and warranty claims, ensuring a 24-hour response rate.",
+					"Maintained customer databases in Salesforce CRM, updating contact sheets and transaction records to accelerate sales cycle velocity by 30%."
+				]
+			}
+		],
+		"educations": [
+			{
+				"id": "edu-1",
+				"institution": "Thammasat University",
+				"degree": "Bachelor of Business Administration (B.B.A.)",
+				"major": "Marketing Major",
+				"location": "Bangkok, TH",
+				"startDate": "2016",
+				"endDate": "2020",
+				"current": false,
+				"gpa": "3.65 (Second Class Honours)"
+			}
+		],
+		"skills": [
+			{
+				"id": "skill-1",
+				"name": "Sales Pipeline Management",
+				"category": "Core"
+			},
+			{
+				"id": "skill-2",
+				"name": "Customer Relations & Client Coordination",
+				"category": "Core"
+			},
+			{
+				"id": "skill-3",
+				"name": "Order Processing & Contract Documentation",
+				"category": "Core"
+			},
+			{
+				"id": "skill-4",
+				"name": "Salesforce CRM & Microsoft Excel (Advanced Pivot Tables)",
+				"category": "Tools"
+			},
+			{
+				"id": "skill-5",
+				"name": "SAP ERP & Google Workspace Suite",
+				"category": "Tools"
+			},
+			{
+				"id": "skill-6",
+				"name": "Professional Business Negotiation",
+				"category": "Soft"
+			},
+			{
+				"id": "skill-7",
+				"name": "Cross-Functional Team Collaboration",
+				"category": "Soft"
+			},
+			{
+				"id": "skill-8",
+				"name": "Strategic Problem Solving",
+				"category": "Soft"
+			}
+		],
+		"languages": [
+			{
+				"id": "lang-1",
+				"name": "Thai",
+				"proficiency": "Native Speaker"
+			},
+			{
+				"id": "lang-2",
+				"name": "English",
+				"proficiency": "Professional Working Proficiency (TOEIC 810)"
+			}
+		],
+		"projectsOrCerts": [
+			{
+				"id": "cert-1",
+				"title": "Salesforce Certified Administrator",
+				"issuerOrCompany": "Salesforce",
+				"date": "2023",
+				"description": "Credentail proving mastery in Salesforce database administration, dashboard setups, and custom analytics reporting."
+			},
+			{
+				"id": "cert-2",
+				"title": "Professional Sales Support & Negotiation Masterclass",
+				"issuerOrCompany": "Thailand Management Association (TMA)",
+				"date": "2022",
+				"description": "Certified intensive training focusing on tactical client communication, sales pipeline enhancement, and conflict resolution."
+			}
+		]
+	},
+	"designConfig": {
+		"template": "minimal",
+		"themeId": "obsidian",
+		"fontPairing": "sans",
+		"spacing": "comfortable",
+		"showSectionHeaders": true,
+		"showAvatar": true
+	}
 }

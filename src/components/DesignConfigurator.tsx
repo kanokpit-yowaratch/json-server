@@ -125,8 +125,12 @@ export default function DesignConfigurator({ config, onChange, disabled = false 
 									: 'border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-900'
 							}`}>
 							<div className="min-w-0">
-								<p className="text-[11px] sm:text-xs font-bold text-slate-900 dark:text-white truncate">{fp.label}</p>
-								<p className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 hidden sm:block">{fp.desc}</p>
+								<p className="text-[11px] sm:text-xs font-bold text-slate-900 dark:text-white truncate">
+									{fp.label}
+								</p>
+								<p className="text-[9px] sm:text-[10px] text-slate-500 dark:text-slate-400 mt-0.5 hidden sm:block">
+									{fp.desc}
+								</p>
 							</div>
 							<span
 								className={`text-[11px] sm:text-xs font-medium px-1.5 sm:px-2 py-0.5 rounded shrink-0 ${

@@ -322,7 +322,9 @@ export default function ResumeEditor({
 					<div className="min-w-0">
 						<h2 className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white flex items-center gap-1.5 sm:gap-2">
 							<Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-amber-500 shrink-0" />
-							<span className="truncate">{currentLanguage === 'th' ? 'แก้ไขข้อมูลเรซูเม่' : 'Resume Content Editor'}</span>
+							<span className="truncate">
+								{currentLanguage === 'th' ? 'แก้ไขข้อมูลเรซูเม่' : 'Resume Content Editor'}
+							</span>
 						</h2>
 						<p className="text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 hidden sm:block">
 							{currentLanguage === 'th'
@@ -338,7 +340,9 @@ export default function ResumeEditor({
 							className="flex items-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-lg text-[11px] sm:text-xs font-semibold bg-red-50 dark:bg-red-950/30 text-red-700 dark:text-red-400 hover:bg-red-100 dark:hover:bg-red-900/30 border border-red-200 dark:border-red-800 transition-all cursor-pointer"
 							title={currentLanguage === 'th' ? 'คืนค่าเริ่มต้นตามเทมเพลต' : 'Reset to default template'}>
 							<RefreshCw className="h-3 w-3" />
-							<span className="hidden xs:inline">{currentLanguage === 'th' ? 'คืนค่าเริ่มต้น' : 'Reset'}</span>
+							<span className="hidden xs:inline">
+								{currentLanguage === 'th' ? 'คืนค่าเริ่มต้น' : 'Reset'}
+							</span>
 						</button>
 					</div>
 				</div>
