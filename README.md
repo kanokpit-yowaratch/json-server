@@ -35,8 +35,7 @@ Create a `.env` file in the project root:
 
 ```env
 MONGODB_URI=mongodb://localhost:27017/resume-builder
-AUTH_SECRET=your-secret-key
-AUTH_URL=http://localhost:3000
+MONGODB_DB=resume
 ```
 
 #### Google OAuth (optional)
