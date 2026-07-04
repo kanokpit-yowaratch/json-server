@@ -15,7 +15,7 @@ interface Resume {
 
 export default function DashboardPage() {
 	const router = useRouter();
-	const { data: session } = useSession();
+	const { data: session, status } = useSession();
 	const [resumes, setResumes] = useState<Resume[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [deleting, setDeleting] = useState<string | null>(null);
@@ -35,8 +35,13 @@ export default function DashboardPage() {
 	};
 
 	useEffect(() => {
+		if (status === 'loading') return;
+		if (!session) {
+			router.push('/login');
+			return;
+		}
 		fetchResumes();
-	}, []);
+	}, [session, status, router]);
 
 	const handleCreate = async () => {
 		setTitleInput('');
@@ -120,68 +125,74 @@ export default function DashboardPage() {
 				</div>
 			</header>
 
-			<main className="max-w-4xl mx-auto px-6 py-8">
-				<div className="flex items-center justify-between mb-6">
-					<div>
-						<h2 className="text-xl font-bold">My Resumes</h2>
-						<p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
-							{resumes.length} resume{resumes.length !== 1 ? 's' : ''}
-						</p>
-					</div>
-					<button
-						onClick={handleCreate}
-						className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 text-slate-950 font-semibold text-sm hover:bg-amber-400 transition-colors cursor-pointer">
-						<Plus className="h-4 w-4" />
-						New Resume
-					</button>
-				</div>
-
-				{loading ? (
+			{status === 'loading' ? (
+				<main className="max-w-4xl mx-auto px-6 py-8">
 					<div className="text-center py-12 text-slate-400">Loading...</div>
-				) : resumes.length === 0 ? (
-					<div className="text-center py-12 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-2xl">
-						<FileText className="h-12 w-12 mx-auto text-slate-300 dark:text-slate-600 mb-3" />
-						<p className="text-slate-500 dark:text-slate-400 font-medium">No resumes yet</p>
-						<p className="text-sm text-slate-400 dark:text-slate-500 mt-1">
-							Click "New Resume" to get started
-						</p>
+				</main>
+			) : (
+				<main className="max-w-4xl mx-auto px-6 py-8">
+					<div className="flex items-center justify-between mb-6">
+						<div>
+							<h2 className="text-xl font-bold">My Resumes</h2>
+							<p className="text-sm text-slate-500 dark:text-slate-400 mt-1">
+								{resumes.length} resume{resumes.length !== 1 ? 's' : ''}
+							</p>
+						</div>
+						<button
+							onClick={handleCreate}
+							className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 text-slate-950 font-semibold text-sm hover:bg-amber-400 transition-colors cursor-pointer">
+							<Plus className="h-4 w-4" />
+							New Resume
+						</button>
 					</div>
-				) : (
-					<div className="space-y-3">
-						{resumes.map((resume) => (
-							<div
-								key={resume._id}
-								className="group flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-700 transition-colors bg-white dark:bg-slate-950">
-								<div className="p-2.5 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">
-									<FileText className="h-5 w-5" />
-								</div>
+
+					{loading ? (
+						<div className="text-center py-12 text-slate-400">Loading...</div>
+					) : resumes.length === 0 ? (
+						<div className="text-center py-12 border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-2xl">
+							<FileText className="h-12 w-12 mx-auto text-slate-300 dark:text-slate-600 mb-3" />
+							<p className="text-slate-500 dark:text-slate-400 font-medium">No resumes yet</p>
+							<p className="text-sm text-slate-400 dark:text-slate-500 mt-1">
+								Click "New Resume" to get started
+							</p>
+						</div>
+					) : (
+						<div className="space-y-3">
+							{resumes.map((resume) => (
 								<div
-									className="flex-1 min-w-0 cursor-pointer"
-									onClick={() => router.push(`/resumes/${resume._id}`)}>
-									<h3 className="font-semibold text-sm truncate">{resume.title}</h3>
-									<p className="text-xs text-slate-400 mt-0.5">
-										{resume.language === 'th' ? 'Thai / English' : 'English / Thai'} &middot; Updated{' '}
-										{formatDate(resume.updatedAt)}
-									</p>
+									key={resume._id}
+									className="group flex items-center gap-4 p-4 rounded-xl border border-slate-200 dark:border-slate-800 hover:border-amber-300 dark:hover:border-amber-700 transition-colors bg-white dark:bg-slate-950">
+									<div className="p-2.5 rounded-lg bg-amber-100 dark:bg-amber-900/30 text-amber-600 dark:text-amber-400">
+										<FileText className="h-5 w-5" />
+									</div>
+									<div
+										className="flex-1 min-w-0 cursor-pointer"
+										onClick={() => router.push(`/resumes/${resume._id}`)}>
+										<h3 className="font-semibold text-sm truncate">{resume.title}</h3>
+										<p className="text-xs text-slate-400 mt-0.5">
+											{resume.language === 'th' ? 'Thai / English' : 'English / Thai'} &middot; Updated{' '}
+											{formatDate(resume.updatedAt)}
+										</p>
+									</div>
+									<div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+										<button
+											onClick={() => router.push(`/resumes/${resume._id}`)}
+											className="p-2 rounded-lg text-slate-400 hover:text-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors cursor-pointer">
+											<Edit className="h-4 w-4" />
+										</button>
+										<button
+											onClick={() => handleDelete(resume._id)}
+											disabled={deleting === resume._id}
+											className="p-2 rounded-lg text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors cursor-pointer disabled:opacity-50">
+											<Trash2 className="h-4 w-4" />
+										</button>
+									</div>
 								</div>
-								<div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-									<button
-										onClick={() => router.push(`/resumes/${resume._id}`)}
-										className="p-2 rounded-lg text-slate-400 hover:text-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-colors cursor-pointer">
-										<Edit className="h-4 w-4" />
-									</button>
-									<button
-										onClick={() => handleDelete(resume._id)}
-										disabled={deleting === resume._id}
-										className="p-2 rounded-lg text-slate-400 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors cursor-pointer disabled:opacity-50">
-										<Trash2 className="h-4 w-4" />
-									</button>
-								</div>
-							</div>
-						))}
-					</div>
-				)}
-			</main>
+							))}
+						</div>
+					)}
+				</main>
+			)}
 
 			{showTitleDialog && (
 				<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
