@@ -27,8 +27,12 @@ export async function GET() {
 		}));
 
 		return NextResponse.json({ success: true, data: serialized });
-	} catch {
-		return NextResponse.json({ success: false, error: 'Failed to fetch users' }, { status: 500 });
+	} catch (err) {
+		const message =
+			err instanceof Error && err.message.includes('MONGODB_URI')
+				? 'Database not configured'
+				: 'Failed to fetch users';
+		return NextResponse.json({ success: false, error: message }, { status: 500 });
 	}
 }
 
@@ -69,8 +73,12 @@ export async function POST(request: NextRequest) {
 				role: 'user',
 			},
 		});
-	} catch {
-		return NextResponse.json({ success: false, error: 'Failed to create user' }, { status: 500 });
+	} catch (err) {
+		const message =
+			err instanceof Error && err.message.includes('MONGODB_URI')
+				? 'Database not configured'
+				: 'Failed to create user';
+		return NextResponse.json({ success: false, error: message }, { status: 500 });
 	}
 }
 
@@ -91,7 +99,11 @@ export async function DELETE(request: NextRequest) {
 		await db.collection('resumes').deleteMany({ userId: id });
 
 		return NextResponse.json({ success: true });
-	} catch {
-		return NextResponse.json({ success: false, error: 'Failed to delete user' }, { status: 500 });
+	} catch (err) {
+		const message =
+			err instanceof Error && err.message.includes('MONGODB_URI')
+				? 'Database not configured'
+				: 'Failed to delete user';
+		return NextResponse.json({ success: false, error: message }, { status: 500 });
 	}
 }

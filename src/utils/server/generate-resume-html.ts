@@ -1,7 +1,7 @@
 import React from 'react';
 import { ResumeData, DesignConfig } from '@/types';
 
-const TAILWIND_FALLBACK_CSS = `
+const TAILWIND_FALLBACK_CSS = `/* Static Tailwind utility classes for PDF rendering */
 .bg-white { background-color: #ffffff; }
 .bg-gray-50 { background-color: #f9fafb; }
 .bg-gray-100 { background-color: #f3f4f6; }
@@ -155,7 +155,6 @@ export async function generateResumeHTML(data: ResumeData, config: DesignConfig)
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root {
       --font-sans: 'Inter', 'Sarabun', ui-sans-serif, system-ui, sans-serif;
@@ -184,7 +183,6 @@ export async function generateResumeHTML(data: ResumeData, config: DesignConfig)
         color-adjust: exact;
       }
     }
-    /* Critical Tailwind fallback - ensures content is visible even if CDN doesn't load */
     ${TAILWIND_FALLBACK_CSS}
   </style>
 </head>
@@ -196,9 +194,15 @@ export async function generateResumeHTML(data: ResumeData, config: DesignConfig)
 </html>`;
 	} catch (error) {
 		console.error('Failed to generate resume HTML:', error);
+		const escaped = String(error)
+			.replace(/&/g, '&amp;')
+			.replace(/</g, '&lt;')
+			.replace(/>/g, '&gt;')
+			.replace(/"/g, '&quot;')
+			.replace(/'/g, '&#39;');
 		return (
 			'<html><body style="background:white;color:black;padding:20px;font-family:sans-serif;"><h1>Error generating resume</h1><p>' +
-			String(error) +
+			escaped +
 			'</p></body></html>'
 		);
 	}

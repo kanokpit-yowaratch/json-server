@@ -22,7 +22,11 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
 		await db.collection('users').updateOne({ _id: new ObjectId(id) }, { $set: update });
 
 		return NextResponse.json({ success: true });
-	} catch {
-		return NextResponse.json({ success: false, error: 'Failed to update user' }, { status: 500 });
+	} catch (err) {
+		const message =
+			err instanceof Error && err.message.includes('MONGODB_URI')
+				? 'Database not configured'
+				: 'Failed to update user';
+		return NextResponse.json({ success: false, error: message }, { status: 500 });
 	}
 }

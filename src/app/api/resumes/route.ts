@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/db';
 import { auth } from '@/lib/auth';
+import { sanitizeResumeData } from '@/lib/sanitize';
 import { ObjectId } from 'mongodb';
 
 export async function GET() {
@@ -36,8 +37,12 @@ export async function GET() {
 		}));
 
 		return NextResponse.json({ success: true, data: serialized });
-	} catch {
-		return NextResponse.json({ success: false, error: 'Failed to fetch resumes' }, { status: 500 });
+	} catch (err) {
+		const message =
+			err instanceof Error && err.message.includes('MONGODB_URI')
+				? 'Database not configured'
+				: 'Failed to fetch resumes';
+		return NextResponse.json({ success: false, error: message }, { status: 500 });
 	}
 }
 
@@ -55,8 +60,8 @@ export async function POST(request: NextRequest) {
 			userId: session.user.id,
 			title: body.title || 'Untitled Resume',
 			language: body.language || 'th',
-			thaiData: body.thaiData || null,
-			englishData: body.englishData || null,
+			thaiData: sanitizeResumeData(body.thaiData || null),
+			englishData: sanitizeResumeData(body.englishData || null),
 			designConfig: body.designConfig || null,
 			createdAt: new Date(),
 			updatedAt: new Date(),
@@ -68,7 +73,11 @@ export async function POST(request: NextRequest) {
 			success: true,
 			data: { _id: result.insertedId.toString(), ...resume },
 		});
-	} catch {
-		return NextResponse.json({ success: false, error: 'Failed to create resume' }, { status: 500 });
+	} catch (err) {
+		const message =
+			err instanceof Error && err.message.includes('MONGODB_URI')
+				? 'Database not configured'
+				: 'Failed to create resume';
+		return NextResponse.json({ success: false, error: message }, { status: 500 });
 	}
 }

@@ -6,7 +6,7 @@ import bcrypt from 'bcryptjs';
 // import prisma from '@/lib/prisma';
 import { JWT } from 'next-auth/jwt';
 // import { ApiError } from '@/lib/errors';
-// import { rateLimit } from '@/lib/rate-limit';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
 
 import Google from 'next-auth/providers/google';
 import Credentials from 'next-auth/providers/credentials';
@@ -26,20 +26,24 @@ const authOptions: NextAuthConfig = {
 		error: '/login',
 	},
 	providers: [
-		GoogleProvider({
-			clientId: process.env.GOOGLE_CLIENT_ID!,
-			clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-			profile(profile) {
-				return {
-					id: profile.sub,
-					name: `${profile.name}`,
-					email: profile.email,
-					username: profile.email,
-					image: profile.picture,
-					role: 'customer', // Force customer role for OAuth users
-				};
-			},
-		}),
+		...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET
+			? [
+					GoogleProvider({
+						clientId: process.env.GOOGLE_CLIENT_ID,
+						clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+						profile(profile) {
+							return {
+								id: profile.sub,
+								name: `${profile.name}`,
+								email: profile.email,
+								username: profile.email,
+								image: profile.picture,
+								role: 'customer',
+							};
+						},
+					}),
+				]
+			: []),
 		CredentialsProvider({
 			id: 'credentials',
 			credentials: {
@@ -48,6 +52,11 @@ const authOptions: NextAuthConfig = {
 			},
 			async authorize(credentials, request): Promise<User | null> {
 				if (!credentials?.email || !credentials?.password) return null;
+
+				const ip = getClientIp(request as Request);
+				const { success } = rateLimit(`login:${ip}`);
+				if (!success) return null;
+
 				const { db } = await connectToDatabase();
 				const user = await db.collection('users').findOne({
 					email: credentials.email as string,

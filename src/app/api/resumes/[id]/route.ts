@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { connectToDatabase } from '@/lib/db';
 import { auth } from '@/lib/auth';
+import { sanitizeResumeData } from '@/lib/sanitize';
 import { ObjectId } from 'mongodb';
 
 export async function GET(_request: NextRequest, { params }: { params: Promise<{ id: string }> }) {
@@ -28,8 +29,12 @@ export async function GET(_request: NextRequest, { params }: { params: Promise<{
 				_id: resume._id.toString(),
 			},
 		});
-	} catch {
-		return NextResponse.json({ success: false, error: 'Failed to fetch resume' }, { status: 500 });
+	} catch (err) {
+		const message =
+			err instanceof Error && err.message.includes('MONGODB_URI')
+				? 'Database not configured'
+				: 'Failed to fetch resume';
+		return NextResponse.json({ success: false, error: message }, { status: 500 });
 	}
 }
 
@@ -46,8 +51,8 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
 
 		const update: Record<string, unknown> = { updatedAt: new Date() };
 		if (body.title !== undefined) update.title = body.title;
-		if (body.thaiData !== undefined) update.thaiData = body.thaiData;
-		if (body.englishData !== undefined) update.englishData = body.englishData;
+		if (body.thaiData !== undefined) update.thaiData = sanitizeResumeData(body.thaiData);
+		if (body.englishData !== undefined) update.englishData = sanitizeResumeData(body.englishData);
 		if (body.designConfig !== undefined) update.designConfig = body.designConfig;
 
 		const result = await db
@@ -59,8 +64,12 @@ export async function PUT(request: NextRequest, { params }: { params: Promise<{ 
 		}
 
 		return NextResponse.json({ success: true });
-	} catch {
-		return NextResponse.json({ success: false, error: 'Failed to update resume' }, { status: 500 });
+	} catch (err) {
+		const message =
+			err instanceof Error && err.message.includes('MONGODB_URI')
+				? 'Database not configured'
+				: 'Failed to update resume';
+		return NextResponse.json({ success: false, error: message }, { status: 500 });
 	}
 }
 
@@ -84,7 +93,11 @@ export async function DELETE(_request: NextRequest, { params }: { params: Promis
 		}
 
 		return NextResponse.json({ success: true });
-	} catch {
-		return NextResponse.json({ success: false, error: 'Failed to delete resume' }, { status: 500 });
+	} catch (err) {
+		const message =
+			err instanceof Error && err.message.includes('MONGODB_URI')
+				? 'Database not configured'
+				: 'Failed to delete resume';
+		return NextResponse.json({ success: false, error: message }, { status: 500 });
 	}
 }
