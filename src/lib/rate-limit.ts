@@ -7,9 +7,7 @@ const RATE_LIMIT_COLLECTION = 'rate_limits';
 
 let indexEnsured = false;
 
-export async function rateLimit(
-	identifier: string,
-): Promise<{ success: boolean; remaining: number }> {
+export async function rateLimit(identifier: string): Promise<{ success: boolean; remaining: number }> {
 	try {
 		const { db } = await connectToDatabase();
 		const collection = db.collection<{
