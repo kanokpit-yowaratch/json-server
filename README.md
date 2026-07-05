@@ -36,14 +36,23 @@ Create a `.env` file in the project root:
 ```env
 MONGODB_URI=mongodb://localhost:27017/resume-builder
 MONGODB_DB=resume
+AUTH_SECRET=your-generated-secret
+```
+
+Generate `AUTH_SECRET` with:
+
+```bash
+openssl rand -base64 32
 ```
 
 #### Google OAuth (optional)
 
 ```env
-AUTH_GOOGLE_CLIENT_ID=your-client-id
-AUTH_GOOGLE_CLIENT_SECRET=your-client-secret
+GOOGLE_CLIENT_ID=your-client-id
+GOOGLE_CLIENT_SECRET=your-client-secret
 ```
+
+> **Deploy on Vercel:** Add all environment variables above in Vercel Dashboard → Project Settings → Environment Variables, then redeploy.
 
 ### Install & Run
 
