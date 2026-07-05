@@ -60,14 +60,14 @@ const authOptions: NextAuthConfig = {
 				if (!credentials?.email || !credentials?.password) return null;
 
 				const ip = getClientIp(request as Request);
-				const { success } = rateLimit(`login:${ip}`);
+				const { success } = await rateLimit(`login:${ip}`);
 				if (!success) return null;
 
 				const { db } = await connectToDatabase();
 				const user = await db.collection('users').findOne({
 					email: credentials.email as string,
 				});
-				if (!user || !user.password) return null;
+				if (!user?.password) return null;
 				const isValid = await compare(credentials.password as string, user.password);
 				if (!isValid) return null;
 				return {
