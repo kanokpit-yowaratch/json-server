@@ -1,22 +1,28 @@
 import NextAuth, { NextAuthConfig, Session, User } from 'next-auth';
-// import { PrismaAdapter } from '@auth/prisma-adapter';
-import CredentialsProvider from 'next-auth/providers/credentials';
-import GoogleProvider from 'next-auth/providers/google';
-import bcrypt from 'bcryptjs';
-// import prisma from '@/lib/prisma';
 import { JWT } from 'next-auth/jwt';
-// import { ApiError } from '@/lib/errors';
-import { rateLimit, getClientIp } from '@/lib/rate-limit';
-
-import Google from 'next-auth/providers/google';
-import Credentials from 'next-auth/providers/credentials';
 import { MongoDBAdapter } from '@auth/mongodb-adapter';
+import GoogleProvider from 'next-auth/providers/google';
+import CredentialsProvider from 'next-auth/providers/credentials';
 import clientPromise, { connectToDatabase } from './db';
 import { compare } from 'bcryptjs';
+import { rateLimit, getClientIp } from '@/lib/rate-limit';
+
+declare module 'next-auth' {
+	interface User {
+		role?: string;
+	}
+	interface Session {
+		user: {
+			id: string;
+			email: string;
+			name: string;
+			role: string;
+		};
+	}
+}
 
 const authOptions: NextAuthConfig = {
 	adapter: MongoDBAdapter(clientPromise),
-	// adapter: PrismaAdapter(prisma),
 	session: {
 		strategy: 'jwt',
 		maxAge: 30 * 24 * 60 * 60, // 30 days
