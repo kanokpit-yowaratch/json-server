@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { signOut, useSession } from 'next-auth/react';
-import { FileText, Plus, Trash2, LogOut, UserCog, Edit } from 'lucide-react';
+import { FileText, Plus, Trash2, LogOut, Edit } from 'lucide-react';
 
 interface Resume {
 	_id: string;
@@ -104,14 +104,6 @@ export default function DashboardPage() {
 						<h1 className="text-lg font-bold">Resume Builder</h1>
 					</div>
 					<div className="flex items-center gap-2">
-						{session?.user?.role === 'admin' && (
-							<button
-								onClick={() => router.push('/admin/users')}
-								className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm font-medium bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors cursor-pointer">
-								<UserCog className="h-4 w-4" />
-								<span className="hidden sm:inline">Manage Users</span>
-							</button>
-						)}
 						<span className="text-sm text-slate-500 dark:text-slate-400 hidden sm:block">
 							{session?.user?.name || session?.user?.email}
 						</span>
